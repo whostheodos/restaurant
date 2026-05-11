@@ -1,8 +1,84 @@
-* * {
-    border: 5px solid black;
-    padding: 1rem;
-    margin: 1rem;
+@font-face {
+    font-family: "DMsans";
+    src: url(/assets/fonts/DMSans.ttf);
+}
+@font-face {
+    font-family: "Lora";
+    src: url(/assets/fonts/Lora.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DMsans",Arial, Helvetica, sans-serif ;
+    scroll-behavior: smooth;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Lora",Arial, Helvetica, sans-serif;
 }
 body {
+    background-color: #f2f0ef;
+}
+.seperator {
+    height: 10vh;
+}
+nav img {
+    width: 120px;
+    height: auto;
+}
+nav {
+    display: flex;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+}
+nav ul {
+    display: flex;
+    direction: row;
+    align-items: center;
+    list-style: none;
+    padding-right: 1rem;
+}
 
+nav ul li a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: orangered;
+    text-shadow: 0 0 5px white;
+    transition: 1s;
+}
+#hero {
+    background-image:url(/assets/images/hero.png);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(.9) drop-shadow(1px 1px 1rem brown) contrast(120%) saturate(1.1);
+    height: 100vh;
+}
+#hero h1 {
+    color: white;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    max-width: 10ch;
+    text-align: center;
+    text-shadow:0 0 5px orangered;
+}
+#about {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#about h1 {
+    top: 50vh;
+    width: 40ch;
+    text-align: center;
 }
