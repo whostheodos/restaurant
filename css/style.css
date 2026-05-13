@@ -38,7 +38,8 @@ nav {
 }
 nav ul {
     display: flex;
-    direction: row;
+    visibility: hidden;
+    flex-direction: column;
     align-items: center;
     list-style: none;
     padding-right: 1rem;
@@ -85,4 +86,14 @@ nav button {
     top: 50vh;
     width: 40ch;
     text-align: center;
+}
+
+@media screen and (width >= 800px) {
+    nav ul {
+        visibility: visible;
+        flex-direction: row;
+    }
+    nav button {
+        visibility: none;
+    }
 }
