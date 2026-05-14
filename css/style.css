@@ -37,9 +37,8 @@ nav {
     width: 100vw;
 }
 nav ul {
-    display: flex;
-    visibility: hidden;
-    flex-direction: column;
+    display: none;
+    flex-direction: row;
     align-items: center;
     list-style: none;
     padding-right: 1rem;
@@ -57,8 +56,17 @@ a:hover {
     transition: 1s;
 }
 nav button {
-    
-    border: 5px solid black;
+    margin-right: 1rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    transition: 1s;
+
+}
+nav button:hover {
+    color: orangered;
 }
 #hero {
     background-image:url(/assets/images/hero.png);
@@ -74,7 +82,7 @@ nav button {
     right: 10%;
     max-width: 10ch;
     text-align: center;
-    text-shadow:0 0 5px orangered;
+    text-shadow:0 0 1px #f2f0ef;
 }
 #about {
     height: 100vh; 
@@ -90,10 +98,9 @@ nav button {
 
 @media screen and (width >= 800px) {
     nav ul {
-        visibility: visible;
-        flex-direction: row;
+        display: flex;
     }
     nav button {
-        visibility: none;
+        display: none;
     }
 }
