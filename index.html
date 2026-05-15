@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
     <title>restaurant</title>
 </head>
 <body>
     <header>
         <nav>
-            <a href="pizeria.com"><img src="/assets/images/logo.svg" alt="restaurant logo"></a>
-            <button type="button"><span>㊂</span></button>
-            <ul>
+            <a href="/index.html"><img src="/assets/images/logo.svg" alt="restaurant logo"></a>
+            <button type="button" class="hamburger"><span>㊂</span></button>
+            <ul class="navMenu">
                 <li><a href="#menu">menu</a></li>
-                <li><a href="#gallery">gallery</a></li>
                 <li><a href="#about">about us</a></li>
                 <li><a href="#contacts">contacts</a></li>
                 <li><a href="#reserve">reservation</a></li>
@@ -28,18 +28,77 @@
         <div class="seperator"></div>
         <section id="about">
             <h1>
-                authentic italian pizzeria
+                authentic italian pizza,
                 enough to make you scream mamma mia!
             </h1>
         </section>
         <section id="menu">
-
-        </section>
-        <section id="gallery">
+            <h1>menu</h1>
+            <div class="menuGrid">
+                <div class="menuCategory">
+                    <h3>pizzas</h3>
+                    <ul>
+                        <li>
+                            <span>Margherita</span>
+                            <span>€9.50</span>
+                        </li>
+                        <li>
+                            <span>Pepperoni</span>
+                            <span>€11.00</span>
+                        </li>
+                        <li>
+                            <span>Quattro Formaggi</span>
+                            <span>€18.50</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menuCategory">
+                    <h3>pastas</h3>
+                    <ul>
+                        <li>
+                            <span>Spaghetti Carbonara</span>
+                            <span>€15.00</span>
+                        </li>
+                        <li>
+                            <span>Penne Arrabbiata</span>
+                            <span>€19.50</span>
+                        </li>
+                        <li>
+                            <span>Tagliatelle al Ragù</span>
+                            <span>€23.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
         </section>
         <section id="reserve">
-            
+            <h3>reserve a seat!</h3>
+            <form>
+                <div>
+                    <label for="name">Name:&nbsp;</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div>
+                    <label for="familyName">Family Name:&nbsp;</label>
+                    <input type="text" name="familyName" id="familyName">
+                </div>
+                <div>
+                    <label for="date">date:&nbsp;</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div>
+                    <label for="email">email address:&nbsp;</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <label for="phone">phone number:&nbsp;</label>
+                    <input type="tel" name="phone" id="phone">
+                </div>
+                <div>
+                    <button type="submit">Reserve</button>
+                </div>
+            </form>
         </section>
         <section id="contacts">
 
