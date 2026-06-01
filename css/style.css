@@ -11,190 +11,277 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "DMsans",Arial, Helvetica, sans-serif ;
+    font-family: "DMsans", Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
 }
-h1,h2,h3,h4,h5,h6 {
-    font-family: "Lora",Arial, Helvetica, sans-serif;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lora", Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
 body {
     background-color: #f2f0ef;
+    color: #1a1a1a;
 }
-.seperator {
-    height: 10vh;
-}
-nav img {
-    width: 120px;
-    height: auto;
-}
+
 nav {
     display: flex;
     position: absolute;
-    flex-wrap: wrap;
     top: 0;
     z-index: 100;
+    width: 100vw;
     align-items: center;
     justify-content: space-between;
-    width: 100vw;
+    flex-wrap: wrap;
+    padding: 0 1rem;
 }
-nav ul {
-    display: none;
-}
-
+nav img { width: 120px; height: auto; }
+nav ul { display: none; }
 nav .navMenu.active {
     display: flex;
-    justify-content: center;
     flex-direction: row;
-    list-style: none;    
+    list-style: none;
+    justify-content: center;
 }
-
-
-
 nav ul li a {
     display: block;
     padding: 1rem;
     color: white;
     text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.05em;
 }
 a:hover {
-    color: orangered;
-    text-shadow: 0 0 5px white;
-    transition: 1s;
+    color: #c0392b;
+    transition: color 0.3s;
 }
 nav button {
     margin-right: 1rem;
     font-size: 2rem;
     border: none;
-    background-color: transparent;
+    background: transparent;
     color: white;
-    text-decoration: none;
-    transition: 1s;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+nav button:hover { color: #c0392b; }
 
-}
-nav button:hover {
-    color: orangered;
-}
 #hero {
-    background-image:url(/assets/images/hero.png);
+    background-image: url(/assets/images/hero.png);
     background-size: cover;
     background-position: center;
-    filter: brightness(.9) drop-shadow(1px 1px 1rem brown) contrast(120%) saturate(1.1);
     height: 100vh;
+    position: relative;
+}
+#hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.45) 100%);
 }
 #hero h1 {
     color: white;
     position: absolute;
-    top: 40%;
+    z-index: 1;
+    top: 42%;
     right: 10%;
-    max-width: 10ch;
+    max-width: 12ch;
     text-align: center;
-    text-shadow:0 0 1px #f2f0ef;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    letter-spacing: 0.02em;
 }
+
+.separator { height: 10vh; }
 #about {
-    height: 100vh; 
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
 }
 #about h1 {
-    top: 50vh;
-    width: 40ch;
+    max-width: 30ch;
     text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.4;
+    color: #2a2a2a;
 }
+
 #menu {
     min-height: 100vh;
+    padding: 4rem 2rem;
 }
-#menu h1 {
+#menu > h1 {
     text-align: center;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+.section-label {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 2.5rem;
 }
 .menuGrid {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 860px;
+    margin: 0 auto;
 }
 .menuCategory {
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 15px;
-    background-color: white;
-    box-shadow: inset 0 0 25px gainsboro;
-    min-height: 70vh;
-}
-.menuCategory * {
-    padding-top: 1rem;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #e0ddd8;
 }
 .menuCategory h3 {
-    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e8e5e0;
 }
+.menuCategory ul { list-style: none; }
 .menuCategory ul li {
-    list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0ede8;
+    font-size: 15px;
+    color: #2a2a2a;
+}
+.menuCategory ul li:last-child { border-bottom: none; }
+.menuCategory ul li span:last-child {
+    color: #888;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
 }
 
 #reserve {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    padding: 5rem 2rem;
+    background: white;
+    margin: 0 1rem;
+    border-radius: 16px;
+    border: 1px solid #e0ddd8;
+}
+
+#reserve > h1 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+#reserve > .section-label,
+#reserve > h1 {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.reserve-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 2.5rem auto 0;
+    align-items: start;
+}
+.reserve-form {
+    background: #fafaf9;
+    border-radius: 10px;
     padding: 2rem;
-    border-radius: 20px;
-    color: black;
-    text-shadow: 0 0px 1px black;
-    box-shadow: inset 0 0 25px orange;
+    border: 1px solid #e8e5e0;
 }
-
-#reserve button {
-    border: none;
-    border-radius: 20px;
-    padding: 1rem;
-    font-weight: bold;
-    background-color: white;
-    box-shadow: inset 0 0 5px gray;
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
-#reserve h3 {
-    margin-bottom: 2rem;
-}
-
-#reserve div {
+.field {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 1.25rem;
 }
-#reserve div div {
+.field label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: 500;
+}
+.field input {
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #d5d2cb;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #1a1a1a;
+    background: white;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: "DMsans", Arial, sans-serif;
+}
+.field input:focus { border-color: #8b6f47; }
+.reserve-submit {
+    width: 100%;
+    padding: 0.85rem;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: "DMsans", Arial, sans-serif;
+    cursor: pointer;
+    margin-top: 0.25rem;
+    transition: background 0.2s;
+}
+.reserve-submit:hover { background: #333; }
+.map-block {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+.map iframe {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    border: 1px solid #e0ddd8;
 }
 
-footer div {
+footer {
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #e0ddd8;
+}
+footer > div {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    margin: 1rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
-
-footer dl dd {
-    margin-bottom: 1rem;
-}
+footer dl { font-size: 14px; line-height: 1.8; color: #555; }
+footer dt { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-top: 1rem; }
+footer dt:first-child { margin-top: 0; }
+footer dd { margin: 0; }
+footer p { font-size: 12px; color: #aaa; }
 .socials {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin-bottom: 1rem;
 }
-
-.socials a {
-  display: block;
-  width: 1.75rem;
-  height: 1.75rem;
-  color: inherit; /* or set a specific color */
-}
-
-.socials svg {
-  width: 100%;
-  height: 100%;
-}
+.socials a { display: block; width: 1.5rem; height: 1.5rem; color: #555; transition: color 0.2s; }
+.socials a:hover { color: #1a1a1a; }
+.socials svg { width: 100%; height: 100%; }
 
 @media screen and (width >= 520px) {
     nav ul {
@@ -204,15 +291,10 @@ footer dl dd {
         list-style: none;
         padding-right: 1rem;
     }
-
-    nav button {
-        display: none;
-    }
-    .menuGrid {
+    nav button { display: none; }
+    .menuGrid { grid-template-columns: 1fr 1fr; }
+    .reserve-grid { grid-template-columns: 1fr 1fr; }
+    .form-row {
         grid-template-columns: 1fr 1fr;
-    }
-    .map iframe {
-    width: 400px;
-    height: 300px;
     }
 }
